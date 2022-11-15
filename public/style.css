@@ -1,0 +1,77 @@
+/*force vertical scroll for glitch button */
+body{
+  height: 100.001vh;
+}
+header h1{
+ padding: 10px 20px; 
+}
+
+.form-group label{
+  margin-right: 16px;
+}
+
+.customForm{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    padding: 3%;
+}
+.customForm .customForm-form{
+    padding: 15% 15px;
+    margin: 30px 10px;
+}
+
+.customForm-left{
+    text-align: center;
+    color: #ecf0f1;
+}
+.customForm-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+.customForm-left img{
+    margin-top: 12%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.customForm-left p{
+    font-weight: lighter;
+    padding: 10% 0%;
+    margin-top: -1%;
+}
+
+.btncustomForm{
+    float: right;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #8e44ad;
+    color: #ecf0f1;
+    font-weight: 600;
+    width: 50%;
+    margin-right: 25%;
+    cursor: pointer; 
+}
+
+.customForm-heading{
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: -15%;
+    color: #495057;
+}
+
+
+/****************/
+
+/* logo rounded */
+img#logo{
+ border-radius:  22.37%; /* 15.625%: old iOS versionsm below 8 */
+}
