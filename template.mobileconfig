@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ConsentText</key>
+	<dict>
+		<key>default</key>
+		<string>{{message}}</string>
+	</dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>FullScreen</key>
+			<true/>
+			<key>Icon</key>
+			<data>
+{{icon}}
+			</data>
+<key>IsRemovable</key>
+			<false/>
+			<key>Label</key>
+			<string>{{appname}}</string>
+			<key>PayloadDescription</key>
+			<string>{{description}}</string>
+			<key>PayloadDisplayName</key>
+			<string>{{payloadname}}</string>
+			<key>PayloadIdentifier</key>
+			<string>>{{identifier}}</string>
+			<key>PayloadOrganization</key>
+			<string>{{organization}}</string>
+			<key>PayloadType</key>
+	<string>com.apple.webClip.managed</string>
+			<key>PayloadUUID</key>
+			<string>{{uuid}}</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>Precomposed</key>
+			<true/>
+			<key>URL</key>
+			<string>{{url}}</string>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>{{description}}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{payloadname}}</string>
+	<key>PayloadIdentifier</key>
+	<string>{{identifier}}</string>
+	<key>PayloadOrganization</key>
+	<string>{{organization}}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/><!--never set to true with random/unknown uuids/identifiers-->
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>{{uuid}}</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
