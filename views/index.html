@@ -1,0 +1,100 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>simple webclip maker</title>
+    <meta name="description" content="A cool thing made with Glitch">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- jquery from cnd for favicon requests -->
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1> The most simple webclip maker (for iOS 5-12.2): </h1>
+    </header>
+    <main>
+        <div class="customForm">
+            <div class="container">
+                <div class="col-md-3 customForm-left">
+                    <img id="icon_preview" src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                    <h3>Welcome</h3>
+                    <p>You are 30 seconds away from creating your own webclip</p>
+                </div>
+                <div class="col-md-9 customForm-right">
+                    <h3 class="customForm-heading">Create a webclip now!</h3>
+                    <form class="customForm-form form" method="post" action="/wc" onsubmit="return wc.check();" autocomplete="off">
+                        <div class="form-group">
+                            <label>Homescreen app name:</label>
+                            <input type="text" class="form-control" placeholder="Homescreen name" name="appname" value="example app" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Webapp url:</label>
+                            <input type="text" class="form-control" placeholder="URL" value="https://example.com" name="url" required onchange="wc.getIcon(this.value);"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Webclip icon:</label>
+                            <label class="btn btn-primary btn-block"> Browse <input type="hidden" id="icon_value" name="icon" /><input type="file" class="hide" accept="image/gif, image/jpeg, image/png" onchange="wc.processUpload(this);">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Creator name:</label>
+                            <input type="text" class="form-control" placeholder="Developer" value="Example Developer" name="devname" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Creator organization:</label>
+                            <input type="text" class="form-control" placeholder="Organization" value="Example organization" name="organization" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Profile name (in Settings)</label>
+                            <input type="text" class="form-control" placeholder="Profile name" value="Example profile" name="payloadname" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Profile description (in Settings)</label>
+                            <input type="text" class="form-control" placeholder="Profile description" value="Installs example app" name="description" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Installation Message (multiple lines possible)</label>
+                            <textarea type="text" class="form-control" placeholder="Installation message" name="message" required>Created with webclip.glitch.me</textarea>
+                        </div>
+                        <!--<div class="form-group">
+                           <div class="checkbox">
+  <label><input id="fullscreen" type="checkbox" value="false">fullscreen</label>
+</div></div>-->
+                        <input type="submit" class="btn btncustomForm" value="Install"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="btn.js"></script>
+</body>
+
+</html>
